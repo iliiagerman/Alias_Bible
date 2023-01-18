@@ -23,23 +23,16 @@ class _TimerState extends State<TimerForGame> {
 
   @override
   Widget build(BuildContext context) {
-  //   return Scaffold(
-  //     backgroundColor: Colors.black,
-  //     body: Container(
-  //       child: Center(
-  //         child: Column(
-  //           mainAxisAlignment: MainAxisAlignment.center,
-  //           children: [
-  //             buildTime(),
-  //
-  //           ],
-  //         ),
-  //       ),
-  //     ),
-  //   );
-  // }
-  //
-  // Widget buildTime() {
+return Center(
+  child: Column(
+    children: [
+      buildTime(),
+    ],
+  ),
+);
+  }
+
+  Widget buildTime() {
     return Text(
       '$seconds',
       style: TextStyle(

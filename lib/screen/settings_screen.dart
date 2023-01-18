@@ -62,8 +62,16 @@ class _SettingsScreenState extends State<SettingsScreen> {
           ),
           const SettingsFormTree(),
           const Spacer(),
-          const ButtonLikeAndShare(name: 'Рассказать друзьям', size: 35),
-          const ButtonLikeAndShare(name: 'Cообщить о проблеме', size: 25),
+          ButtonLikeAndShare(
+            name: 'Рассказать друзьям',
+            size: 35,
+            onButtonClick: () {},
+          ),
+          ButtonLikeAndShare(
+            name: 'Cообщить о проблеме',
+            size: 25,
+            onButtonClick: () {},
+          ),
           const SizedBox(height: 30),
         ],
       ),

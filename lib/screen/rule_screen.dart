@@ -96,7 +96,7 @@ class _RuleScreenState extends State<RuleScreen> {
               ],
             ),
             const Spacer(),
-            const ButtonLikeAndShare(name: 'нравится игра?', size: 40),
+           ButtonLikeAndShare(name: 'нравится игра?', size: 40, onButtonClick: () {},),
             const SizedBox(height: 50),
           ],
         ));
