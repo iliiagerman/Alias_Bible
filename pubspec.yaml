@@ -1,0 +1,40 @@
+name: my_blanks
+description: A new Flutter project.
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=2.18.2 <3.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^2.0.0
+
+flutter:
+
+
+  uses-material-design: true
+
+  assets:
+     - lib/assets/images/home_screen.jpg
+     - lib/assets/images/home_screen_one.jpg
+     - lib/assets/images/rule.gif
+
+
+  fonts:
+     - family: RubikDistressed
+       fonts:
+         - asset: lib/assets/fonts/RubikDistressed-Regular.ttf
+     - family: LuckiestGuy
+       fonts:
+         - asset: lib/assets/fonts/LuckiestGuy-Regular.ttf
+
+
