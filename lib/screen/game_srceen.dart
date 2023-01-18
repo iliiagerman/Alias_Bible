@@ -10,6 +10,11 @@ class GameScreen extends StatefulWidget {
 class _GameScreenState extends State<GameScreen> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Container(
+      child: Text(
+        'hhyufrebyuikfv3ryh'
+      ),
+    );
+
   }
 }
