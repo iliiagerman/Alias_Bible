@@ -37,6 +37,7 @@ class _GameScreenState extends State<GameScreen> {
           children: [
             SizedBox(height: 100),
             TimerForGame(),
+
           ],
         ),
       ),
