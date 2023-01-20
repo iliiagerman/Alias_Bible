@@ -1,8 +1,11 @@
+import 'dart:async';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../widgets/button/button_like_and_share.dart';
-import '../widgets/game/timer.dart';
+import '../widgets/button/home_screen_button.dart';
+import '../widgets/game/game_timer.dart';
 
 class GameScreen extends StatefulWidget {
   const GameScreen({Key? key}) : super(key: key);
@@ -12,6 +15,11 @@ class GameScreen extends StatefulWidget {
 }
 
 class _GameScreenState extends State<GameScreen> {
+
+    static const maxSeconds = 60;
+  int seconds = maxSeconds;
+   Timer? timer;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,13 +43,32 @@ class _GameScreenState extends State<GameScreen> {
       body: Center(
         child: Column(
           children: [
-            SizedBox(height: 100),
-            TimerForGame(),
-
+            SizedBox(height: 40),
+            GameTimer(maxSeconds: maxSeconds,seconds: seconds),
+            Spacer(),
+            buildButtons(),
+            SizedBox(height: 30),
           ],
         ),
       ),
     );
   }
+
+  Widget buildButtons() {
+    return HomeScreenButton(
+      nameButton: 'начать игру',
+      onButtonClick: () {
+        startTimer();
+      },
+    );
+  }
+  void startTimer() {
+    timer = Timer.periodic(Duration(seconds: 1), (_) {
+      if (seconds > 0) {
+        setState(() => seconds--);
+      } else {
+        timer?.cancel();
+      }
+    });
+  }
 }
-// TimerForGame.startTimer();},

@@ -9,7 +9,6 @@ import 'package:my_blanks/screen/new_play_screen.dart';
 import 'package:my_blanks/screen/rule_screen.dart';
 import 'package:my_blanks/screen/setting_one_screen.dart';
 import 'package:my_blanks/screen/settings_screen.dart';
-import 'package:my_blanks/widgets/game/timer.dart';
 
 
 void main() {
@@ -37,6 +36,5 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const HomeScreen();
-    // return TimerForGame();
   }
 }

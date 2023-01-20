@@ -1,40 +1,15 @@
-import 'dart:async';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../button/home_screen_button.dart';
+class GameTimer extends StatelessWidget {
+  const GameTimer({
+    Key? key,
+    required this.maxSeconds,
+    required this.seconds,
+  }) : super(key: key);
 
-class TimerForGame extends StatefulWidget {
-  const TimerForGame({Key? key}) : super(key: key);
-
-  @override
-  State<TimerForGame> createState() => _TimerState();
-}
-
-class _TimerState extends State<TimerForGame> {
-  static const maxSeconds = 60;
-  int seconds = maxSeconds;
- Timer? timer;
-
-  void startTimer() {
-    timer = Timer.periodic(Duration(seconds: 1), (_) {
-      if (seconds > 0) {
-        setState(() => seconds--);
-      } else {
-        timer?.cancel();
-      }
-    });
-  }
-
-  Widget buildButtons() {
-    return HomeScreenButton(
-      nameButton: 'начать игру',
-      onButtonClick: () {
-        startTimer();
-      },
-    );
-  }
+  final int maxSeconds;
+  final int seconds;
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +17,6 @@ class _TimerState extends State<TimerForGame> {
       children: [
         buildTimer(),
         SizedBox(height: 30),
-        buildButtons(),
       ],
     );
   }

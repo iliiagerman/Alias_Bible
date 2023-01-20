@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../widgets/button/home_screen_button.dart';
-import '../widgets/game/timer.dart';
 import '../widgets/info_about_teams.dart';
 
 
