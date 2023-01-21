@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 
 import '../widgets/button/button_like_and_share.dart';
 import '../widgets/button/home_screen_button.dart';
+import '../widgets/game/card.dart';
 import '../widgets/game/game_timer.dart';
 
 class GameScreen extends StatefulWidget {
@@ -43,11 +44,14 @@ class _GameScreenState extends State<GameScreen> {
       body: Center(
         child: Column(
           children: [
-            SizedBox(height: 40),
+            SizedBox(height: 20),
             GameTimer(maxSeconds: maxSeconds,seconds: seconds),
+            Spacer(),
+            CardForGame(),
             Spacer(),
             buildButtons(),
             SizedBox(height: 30),
+
           ],
         ),
       ),

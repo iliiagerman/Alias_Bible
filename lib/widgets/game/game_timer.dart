@@ -16,7 +16,6 @@ class GameTimer extends StatelessWidget {
     return Column(
       children: [
         buildTimer(),
-        SizedBox(height: 30),
       ],
     );
   }
