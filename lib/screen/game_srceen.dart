@@ -16,10 +16,9 @@ class GameScreen extends StatefulWidget {
 }
 
 class _GameScreenState extends State<GameScreen> {
-
-    static const maxSeconds = 60;
+  static const maxSeconds = 60;
   int seconds = maxSeconds;
-   Timer? timer;
+  Timer? timer;
 
   @override
   Widget build(BuildContext context) {
@@ -45,13 +44,13 @@ class _GameScreenState extends State<GameScreen> {
         child: Column(
           children: [
             SizedBox(height: 20),
-            GameTimer(maxSeconds: maxSeconds,seconds: seconds),
+            GameTimer(maxSeconds: maxSeconds, seconds: seconds),
             Spacer(),
-            CardForGame(),
+            // CardForGame(),
+            ListCard(),
             Spacer(),
             buildButtons(),
             SizedBox(height: 30),
-
           ],
         ),
       ),
@@ -66,6 +65,7 @@ class _GameScreenState extends State<GameScreen> {
       },
     );
   }
+
   void startTimer() {
     timer = Timer.periodic(Duration(seconds: 1), (_) {
       if (seconds > 0) {
@@ -74,5 +74,11 @@ class _GameScreenState extends State<GameScreen> {
         timer?.cancel();
       }
     });
+  }
+
+  Widget ListCard() {
+    return Center(
+      S
+    );
   }
 }
