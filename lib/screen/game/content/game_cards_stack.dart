@@ -15,8 +15,17 @@ class GameCardsStack extends StatelessWidget {
         child: Center(
             child: SwipeCards(
           matchEngine: state.matchEngine,
-          onStackFinished: () {
+          onStackFinished:
+              () {
             // todo
+            return const Center(
+                child: Text(
+              'карточки закончились',
+              style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 30),
+            ));
           },
           itemBuilder: (BuildContext context, int index) {
             return Card(

@@ -1,17 +1,26 @@
 import 'dart:async';
 
+import 'package:flutter/material.dart';
 import 'package:my_blanks/screen/game/game_screen_state.dart';
 
 class GameScreenController {
   final GameScreenState _state = GameScreenState();
 
+
   Timer? _timer;
 
+  late Function openGameFinishScreen;
+
   GameScreenState get state => _state;
+
+  GameScreenController({
+    required this.openGameFinishScreen,
+  });
 
   dispose() {
     _timer?.cancel();
   }
+
 
   startTimer() {
     if (state.currentStep != GameStep.startingGame) {
@@ -27,7 +36,11 @@ class GameScreenController {
 
 
         state.currentStep = GameStep.finishedGame;
+        openGameFinishScreen();
       }
     });
   }
+
+
+
 }

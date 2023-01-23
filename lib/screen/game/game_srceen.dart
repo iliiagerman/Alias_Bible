@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:my_blanks/screen/game/content/game_screen_content.dart';
 import 'package:my_blanks/screen/game/game_screen_controller.dart';
@@ -16,7 +15,9 @@ class _GameScreenState extends State<GameScreen> {
 
   @override
   void initState() {
-    _controller = GameScreenController();
+    _controller = GameScreenController(
+        openGameFinishScreen: () =>
+            Navigator.pushNamed(context, '/rule_screen.dart'));
     super.initState();
   }
 

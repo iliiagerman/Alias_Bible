@@ -42,6 +42,11 @@ class GameScreenContent extends StatelessWidget {
           child: Column(
             children: [
               const SizedBox(height: 20),
+              Visibility(
+                  visible: state.currentStep == GameStep.startingGame,
+                  child: SizedBox(
+                    height: 50,
+                  )),
               GameTimer(
                   maxSeconds: GameScreenState.maxSeconds,
                   seconds: state.seconds),
@@ -61,22 +66,26 @@ class GameScreenContent extends StatelessWidget {
                   },
                 ),
               ),
-              Visibility(
-                visible: state.currentStep == GameStep.startingGame,
-                child: CardForGame(name: 'начать игру'),
-              ),
+              // Visibility(
+              //   visible: state.currentStep == GameStep.startingGame,
+              //   child: CardForGame(name: 'начать игру'),
+              // ),
               Spacer(),
               Visibility(
                 visible: state.currentStep == GameStep.startingGame,
-                child: HomeScreenButton(
-                  nameButton: 'начать игру',
-                  onButtonClick: () {
-                    context.read<GameScreenController>().startTimer();
-                    // startTimer();
-                  },
+                child: Column(
+                  children: [
+                    HomeScreenButton(
+                      nameButton: 'начать игру',
+                      onButtonClick: () {
+                        context.read<GameScreenController>().startTimer();
+                        // startTimer();
+                      },
+                    ),
+                    SizedBox(height: 50),
+                  ],
                 ),
               ),
-              const SizedBox(height: 30),
             ],
           ),
         ),
@@ -84,3 +93,5 @@ class GameScreenContent extends StatelessWidget {
     });
   }
 }
+//context.read<GameScreenController>().startTimer(
+// Navigator.pushNamed(context, '/rule_screen.dart');

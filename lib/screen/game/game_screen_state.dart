@@ -3,7 +3,7 @@ import 'package:my_blanks/data/list_card.dart';
 import 'package:swipe_cards/swipe_cards.dart';
 
 class GameScreenState extends ChangeNotifier {
-  static const maxSeconds = 60;
+  static const maxSeconds = 5;
 
   GameStep _currentStep = GameStep.startingGame;
   int _seconds = maxSeconds;
@@ -23,6 +23,8 @@ class GameScreenState extends ChangeNotifier {
     _cards.addAll(listCard);
     _matchEngine = MatchEngine(swipeItems: _swipeItems);
   }
+
+
 
   set currentStep(GameStep value) {
     _currentStep = value;
