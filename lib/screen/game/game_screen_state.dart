@@ -24,8 +24,6 @@ class GameScreenState extends ChangeNotifier {
     _matchEngine = MatchEngine(swipeItems: _swipeItems);
   }
 
-
-
   set currentStep(GameStep value) {
     _currentStep = value;
     notifyListeners();
@@ -52,5 +50,6 @@ class GameScreenState extends ChangeNotifier {
 enum GameStep {
   startingGame,
   playingGame,
+  finishedTime,
   finishedGame,
 }

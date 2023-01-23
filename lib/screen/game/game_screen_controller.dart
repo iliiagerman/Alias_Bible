@@ -34,9 +34,8 @@ class GameScreenController {
       } else {
         _timer?.cancel();
 
-
-        state.currentStep = GameStep.finishedGame;
-        openGameFinishScreen();
+        state.currentStep = GameStep.finishedTime;
+        // openGameFinishScreen();
       }
     });
   }

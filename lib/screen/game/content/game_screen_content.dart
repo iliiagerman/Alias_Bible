@@ -52,24 +52,28 @@ class GameScreenContent extends StatelessWidget {
                   seconds: state.seconds),
               const Spacer(),
               Visibility(
-                  visible: state.currentStep == GameStep.playingGame,
+                  visible: state.currentStep == GameStep.playingGame ||
+                      state.currentStep == GameStep.finishedTime,
                   child: const GameCardsStack()),
               const Spacer(),
               Visibility(
-                visible: state.currentStep == GameStep.playingGame,
+                visible: state.currentStep == GameStep.playingGame ||
+                    state.currentStep == GameStep.finishedTime,
                 child: ButtonsForGame(
                   onButtonClickCorrectly: () {
+                    if (state.currentStep == GameStep.finishedTime) {
+                      Navigator.pushNamed(context, '/result_game_screen');
+                    }
                     state.matchEngine.currentItem?.nope();
                   },
                   onButtonClickFalse: () {
+                    if (state.currentStep == GameStep.finishedTime) {
+                      Navigator.pushNamed(context, '/result_game_screen');
+                    }
                     state.matchEngine.currentItem?.like();
                   },
                 ),
               ),
-              // Visibility(
-              //   visible: state.currentStep == GameStep.startingGame,
-              //   child: CardForGame(name: 'начать игру'),
-              // ),
               Spacer(),
               Visibility(
                 visible: state.currentStep == GameStep.startingGame,
@@ -93,5 +97,3 @@ class GameScreenContent extends StatelessWidget {
     });
   }
 }
-//context.read<GameScreenController>().startTimer(
-// Navigator.pushNamed(context, '/rule_screen.dart');
