@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:my_blanks/screen/choice_level_screen.dart';
-import 'package:my_blanks/screen/game_srceen.dart';
+import 'package:my_blanks/screen/game/game_srceen.dart';
 import 'package:my_blanks/screen/home_screen.dart';
 import 'package:my_blanks/screen/info_about_teams_screen.dart';
 import 'package:my_blanks/screen/new_play_screen.dart';

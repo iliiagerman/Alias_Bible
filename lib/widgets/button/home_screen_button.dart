@@ -7,22 +7,26 @@ class HomeScreenButton extends StatelessWidget {
   const HomeScreenButton({
     super.key,
     required this.nameButton,
-     this.onButtonClick,
+    this.onButtonClick,
   });
 
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      onPressed: onButtonClick ,
+      onPressed: onButtonClick,
       style: ElevatedButton.styleFrom(
-        backgroundColor: Colors.deepOrange,
+        backgroundColor: Colors.deepOrange.shade900,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(22)),
         fixedSize: const Size(300, 60),
       ),
       child: Text(
         nameButton,
         style: const TextStyle(
-            fontSize: 28, fontWeight: FontWeight.bold, color: Colors.white),
+          fontFamily: 'Neucha',
+          fontSize: 28,
+          fontWeight: FontWeight.w600,
+          color: Colors.white,
+        ),
       ),
     );
   }

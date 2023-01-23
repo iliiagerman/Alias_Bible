@@ -12,6 +12,7 @@ dependencies:
 
   cupertino_icons: ^1.0.2
   swipe_cards:
+  provider: ^6.0.5
 
 dev_dependencies:
   flutter_test:
@@ -37,5 +38,8 @@ flutter:
      - family: LuckiestGuy
        fonts:
          - asset: lib/assets/fonts/LuckiestGuy-Regular.ttf
+     - family: Neucha
+       fonts:
+         - asset: lib/assets/fonts/Neucha-Regular.ttf
 
 

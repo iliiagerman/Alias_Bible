@@ -43,6 +43,7 @@ class _ChangeLevelScreenState extends State<ChangeLevelScreen> {
                         ),
                         ChoiceLevelForm(
                           level: 'Пастор',
+                          onButtonClick: () {},
                         ),
                       ],
                     ),

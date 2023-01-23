@@ -31,7 +31,7 @@ class _NewPlayScreenState extends State<NewPlayScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black12,
+      backgroundColor: Colors.black,
       appBar: AppBar(
         backgroundColor: Colors.deepOrange,
         title: const Text(
