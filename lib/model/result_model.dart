@@ -1,5 +1,6 @@
 class ResultModel {
   String name;
+  bool isSelected;
 
-  ResultModel(this.name);
+  ResultModel(this.name, this.isSelected);
 }
