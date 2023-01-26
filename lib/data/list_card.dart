@@ -17,5 +17,4 @@ List<ListCard> listCard = [
   ListCard('yellow'),
   ListCard('yellow'),
   ListCard('yellow'),
-  ListCard('yellow'),
 ];
