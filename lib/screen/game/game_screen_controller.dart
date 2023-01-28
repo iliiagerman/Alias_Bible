@@ -6,7 +6,6 @@ import 'package:my_blanks/screen/game/game_screen_state.dart';
 class GameScreenController {
   final GameScreenState _state = GameScreenState();
 
-
   Timer? _timer;
 
   late Function openGameFinishScreen;
@@ -15,12 +14,17 @@ class GameScreenController {
 
   GameScreenController({
     required this.openGameFinishScreen,
-  });
+  }) {
+    state.matchEngine.addListener(() {
+     if(state.currentStep == GameStep.finishedTime){
+       openGameFinishScreen();
+     }
+    });
+  }
 
   dispose() {
     _timer?.cancel();
   }
-
 
   startTimer() {
     if (state.currentStep != GameStep.startingGame) {
@@ -39,7 +43,4 @@ class GameScreenController {
       }
     });
   }
-
-
-
 }

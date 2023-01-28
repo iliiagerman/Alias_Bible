@@ -17,7 +17,7 @@ class _GameScreenState extends State<GameScreen> {
   void initState() {
     _controller = GameScreenController(
         openGameFinishScreen: () =>
-            Navigator.pushNamed(context, '/rule_screen.dart'));
+            Navigator.pushNamed(context, '/result_game_screen'));
     super.initState();
   }
 
