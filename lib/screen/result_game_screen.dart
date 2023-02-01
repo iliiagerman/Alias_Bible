@@ -11,6 +11,7 @@ class ResultGameScreen extends StatefulWidget {
 }
 
 class _ResultGameScreenState extends State<ResultGameScreen> {
+
   List<ResultModel> resultModel = [
     ResultModel('red', false),
     ResultModel('white',false),
@@ -42,6 +43,8 @@ class _ResultGameScreenState extends State<ResultGameScreen> {
   }
 
   Widget ContactItem(String name, bool isSelected) {
+
+   isSelected = true;
     return ListTile(
       title: Row(
         children: [
@@ -59,7 +62,7 @@ class _ResultGameScreenState extends State<ResultGameScreen> {
         value: isSelected,
         onChanged: (bool value) {
           setState(() {
-            isSelected = value;
+            resultModel[index].isSelected = !resultModel[index].isSelected;
           });
         },
       ),

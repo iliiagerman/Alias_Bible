@@ -48,7 +48,7 @@ class _NewPlayScreenState extends State<NewPlayScreen> {
         children: [
           const SizedBox(height: 12),
           //
-          // NewPlayForm(nameForController: ),
+          // NewPlayForm(nameForController: ),цццц
           Expanded(
               child: SingleChildScrollView(
             child: Column(
