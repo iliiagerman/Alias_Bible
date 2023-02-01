@@ -10,6 +10,7 @@ import 'package:my_blanks/screen/result_game_screen.dart';
 import 'package:my_blanks/screen/rule_screen.dart';
 import 'package:my_blanks/screen/setting_one_screen.dart';
 import 'package:my_blanks/screen/settings_screen.dart';
+import 'package:my_blanks/widgets/button/alert_dialog.dart';
 
 
 void main() {
@@ -38,5 +39,6 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const HomeScreen();
+    // return const AlertDialogApp();
   }
 }

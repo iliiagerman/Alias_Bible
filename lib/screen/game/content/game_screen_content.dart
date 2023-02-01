@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:my_blanks/screen/game/content/game_cards_stack.dart';
 import 'package:my_blanks/screen/game/game_screen_controller.dart';
@@ -8,6 +9,7 @@ import 'package:my_blanks/widgets/button/home_screen_button.dart';
 import 'package:my_blanks/widgets/game/game_timer.dart';
 import 'package:provider/provider.dart';
 
+import '../../../widgets/button/alert_dialog.dart';
 import '../../../widgets/game/card.dart';
 
 class GameScreenContent extends StatelessWidget {
@@ -20,6 +22,26 @@ class GameScreenContent extends StatelessWidget {
         backgroundColor: Colors.black,
         appBar: AppBar(
             backgroundColor: Colors.black,
+            leading: IconButton(
+                onPressed: () {
+                  CupertinoAlertDialog(
+                    title: const Text('Выйти из игры?'),
+                    content: const Text('вы сбросите всю игру'),
+                    actions: <CupertinoDialogAction>[
+                      CupertinoDialogAction(
+                        isDefaultAction: true,
+                        onPressed: () {},
+                        child: const Text('No'),
+                      ),
+                      CupertinoDialogAction(
+                        isDestructiveAction: true,
+                        onPressed: () {},
+                        child: const Text('Yes'),
+                      ),
+                    ],
+                  );
+                }, icon: Icon(Icons.arrow_back_ios)
+            ),
             centerTitle: false,
             title: Row(
               children: [
