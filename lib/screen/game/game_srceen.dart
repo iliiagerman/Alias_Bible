@@ -3,6 +3,8 @@ import 'package:my_blanks/screen/game/content/game_screen_content.dart';
 import 'package:my_blanks/screen/game/game_screen_controller.dart';
 import 'package:provider/provider.dart';
 
+import 'game_screen_state.dart';
+
 class GameScreen extends StatefulWidget {
   const GameScreen({Key? key}) : super(key: key);
 
@@ -29,13 +31,17 @@ class _GameScreenState extends State<GameScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return MultiProvider(
-      providers: [
-        /// раздает эти две штуки - контролер и стейт всем виджетам в child
-        Provider.value(value: _controller),
-        ChangeNotifierProvider.value(value: _controller.state),
-      ],
-      child: const GameScreenContent(),
+    return WillPopScope(
+      onWillPop: () async=> true,
+      child: MultiProvider(
+          providers: [
+            /// раздает эти две штуки - контролер и стейт всем виджетам в child
+            Provider.value(value: _controller),
+            ChangeNotifierProvider.value(value: _controller.state),
+          ],
+          child: const GameScreenContent(),
+
+      ),
     );
   }
 }

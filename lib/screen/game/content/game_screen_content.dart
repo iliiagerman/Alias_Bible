@@ -1,3 +1,4 @@
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:my_blanks/screen/game/content/game_cards_stack.dart';
@@ -8,9 +9,8 @@ import 'package:my_blanks/widgets/button/buttons_for_game.dart';
 import 'package:my_blanks/widgets/button/home_screen_button.dart';
 import 'package:my_blanks/widgets/game/game_timer.dart';
 import 'package:provider/provider.dart';
-
-import '../../../widgets/button/alert_dialog.dart';
-import '../../../widgets/game/card.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 
 class GameScreenContent extends StatelessWidget {
   const GameScreenContent({Key? key}) : super(key: key);
@@ -24,24 +24,9 @@ class GameScreenContent extends StatelessWidget {
             backgroundColor: Colors.black,
             leading: IconButton(
                 onPressed: () {
-                  CupertinoAlertDialog(
-                    title: const Text('Выйти из игры?'),
-                    content: const Text('вы сбросите всю игру'),
-                    actions: <CupertinoDialogAction>[
-                      CupertinoDialogAction(
-                        isDefaultAction: true,
-                        onPressed: () {},
-                        child: const Text('No'),
-                      ),
-                      CupertinoDialogAction(
-                        isDestructiveAction: true,
-                        onPressed: () {},
-                        child: const Text('Yes'),
-                      ),
-                    ],
-                  );
-                }, icon: Icon(Icons.arrow_back_ios)
-            ),
+                  _showCupertinoDialog(context);
+                },
+                icon: const Icon(Icons.arrow_back_ios)),
             centerTitle: false,
             title: Row(
               children: [
@@ -66,7 +51,7 @@ class GameScreenContent extends StatelessWidget {
               const SizedBox(height: 20),
               Visibility(
                   visible: state.currentStep == GameStep.startingGame,
-                  child: SizedBox(
+                  child: const SizedBox(
                     height: 50,
                   )),
               GameTimer(
@@ -96,7 +81,7 @@ class GameScreenContent extends StatelessWidget {
                   },
                 ),
               ),
-              Spacer(),
+              const Spacer(),
               Visibility(
                 visible: state.currentStep == GameStep.startingGame,
                 child: Column(
@@ -108,7 +93,7 @@ class GameScreenContent extends StatelessWidget {
                         // startTimer();
                       },
                     ),
-                    SizedBox(height: 50),
+                    const SizedBox(height: 50),
                   ],
                 ),
               ),
@@ -117,5 +102,28 @@ class GameScreenContent extends StatelessWidget {
         ),
       );
     });
+  }
+  void _showCupertinoDialog(BuildContext context) {
+    showDialog(
+        context: context,
+        builder: (context) {
+          return CupertinoAlertDialog(
+            title: const Text('Хотите выйти?'),
+            content: const Text('игра начнется заново!'),
+            actions: <Widget>[
+              TextButton(
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
+                  child: const Text('отмена')),
+              TextButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, '/');
+                },
+                child: const Text('выйти'),
+              )
+            ],
+          );
+        });
   }
 }

@@ -24,40 +24,43 @@ class _ResultGameScreenState extends State<ResultGameScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        backgroundColor: Colors.black,
-        appBar: AppBar(
-          leading: const Text(' '),
-          backgroundColor: Colors.deepOrange,
-          title: const Text(
-            'Результат',
-            style: TextStyle(fontSize: 25),
-          ),
-        ),
-        body: Column(
-          children: [
-            Expanded(
-                flex: 100,
-                child: ListView.builder(
-                    itemCount: resultModel.length,
-                    itemBuilder: (BuildContext context, int index) {
-                      return ContactItem(
-                        resultModel[index].name,
-                        resultModel[index].isSelected,
-                        index,
-                      );
-                    })),
-            Spacer(),
-            HomeScreenButton(
-              nameButton: 'Продолжить',
-              onButtonClick: () {
-                Navigator.pushNamed(context, '/info_about_teams_screen.dart');
-                // TimerForGame.startTimer();
-              },
+    return WillPopScope(
+      onWillPop: () async => false,
+      child: Scaffold(
+          backgroundColor: Colors.black,
+          appBar: AppBar(
+            leading: const Text(' '),
+            backgroundColor: Colors.deepOrange,
+            title: const Text(
+              'Результат',
+              style: TextStyle(fontSize: 25),
             ),
-            SizedBox(height: 30),
-          ],
-        ));
+          ),
+          body: Column(
+            children: [
+              Expanded(
+                  flex: 100,
+                  child: ListView.builder(
+                      itemCount: resultModel.length,
+                      itemBuilder: (BuildContext context, int index) {
+                        return ContactItem(
+                          resultModel[index].name,
+                          resultModel[index].isSelected,
+                          index,
+                        );
+                      })),
+              Spacer(),
+              HomeScreenButton(
+                nameButton: 'Продолжить',
+                onButtonClick: () {
+                  Navigator.pushNamed(context, '/info_about_teams_screen.dart');
+                  // TimerForGame.startTimer();
+                },
+              ),
+              SizedBox(height: 30),
+            ],
+          )),
+    );
   }
 
   Widget ContactItem(String name, bool isSelected, int index) {
