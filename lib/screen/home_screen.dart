@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../widgets/button/home_screen_button.dart';
@@ -11,7 +10,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Material(
       child: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           image: DecorationImage(
               image: AssetImage("lib/assets/images/home_screen_one.jpg"),
               fit: BoxFit.cover),
@@ -20,30 +19,30 @@ class HomeScreen extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              SizedBox(height: 50),
-              HomeEmblem(),
-              Spacer(),
+              const SizedBox(height: 50),
+              const HomeEmblem(),
+              const Spacer(),
               HomeScreenButton(
                 nameButton: 'Новая игра',
                 onButtonClick: () {
                   Navigator.pushNamed(context, '/new_play_screen.dart');
                 },
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               HomeScreenButton(
                 nameButton: 'Правила',
                 onButtonClick: () {
                   Navigator.pushNamed(context, '/rule_screen.dart');
                 },
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               HomeScreenButton(
                 nameButton: 'Настройки',
                 onButtonClick: () {
                   Navigator.pushNamed(context, '/settings_screen.dart');
                 },
               ),
-              SizedBox(height: 0),
+              const SizedBox(height: 0),
             ],
           ),
         ),
