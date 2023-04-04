@@ -5,14 +5,14 @@ import '../widgets/button/home_screen_button.dart';
 import '../widgets/info_about_teams.dart';
 
 
-class InfoAboutTeamsScreen extends StatefulWidget {
-  const InfoAboutTeamsScreen({Key? key}) : super(key: key);
+class InfoAboutTems extends StatefulWidget {
+  const InfoAboutTems({Key? key}) : super(key: key);
 
   @override
-  State<InfoAboutTeamsScreen> createState() => _InfoAboutTeamsScreenState();
+  State<InfoAboutTems> createState() => _InfoAboutTemsState();
 }
 
-class _InfoAboutTeamsScreenState extends State<InfoAboutTeamsScreen> {
+class _InfoAboutTemsState extends State<InfoAboutTems> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -1,17 +1,17 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../widgets/button/home_screen_button.dart';
-import '../widgets/choice_level_form.dart';
+import '../../widgets/button/home_screen_button.dart';
+import '../../widgets/choice_level_form.dart';
 
-class ChangeLevelScreen extends StatefulWidget {
-  const ChangeLevelScreen({Key? key}) : super(key: key);
+class NewGameCategoryStepPage extends StatefulWidget {
+  const NewGameCategoryStepPage({Key? key}) : super(key: key);
 
   @override
-  State<ChangeLevelScreen> createState() => _ChangeLevelScreenState();
+  State<NewGameCategoryStepPage> createState() => _NewGameCategoryStepPageState();
 }
 
-class _ChangeLevelScreenState extends State<ChangeLevelScreen> {
+class _NewGameCategoryStepPageState extends State<NewGameCategoryStepPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

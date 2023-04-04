@@ -2,18 +2,18 @@ import 'dart:core';
 
 import 'package:flutter/material.dart';
 
-import '../widgets/button/home_screen_button.dart';
-import '../widgets/settings/setting_form_Tree.dart';
-import '../widgets/settings/settings_form.dart';
+import '../../widgets/button/home_screen_button.dart';
+import '../../widgets/settings/setting_form_Tree.dart';
+import '../../widgets/settings/settings_form.dart';
 
-class SettingsScreenOne extends StatefulWidget {
-  const SettingsScreenOne({Key? key}) : super(key: key);
+class NewGameSettingsStepPage extends StatefulWidget {
+  const NewGameSettingsStepPage({Key? key}) : super(key: key);
 
   @override
-  State<SettingsScreenOne> createState() => _SettingsScreenState();
+  State<NewGameSettingsStepPage> createState() => _SettingsScreenState();
 }
 
-class _SettingsScreenState extends State<SettingsScreenOne> {
+class _SettingsScreenState extends State<NewGameSettingsStepPage> {
   double sliderValue = 50;
   double sliderValueTwo = 60;
   bool lights = false;

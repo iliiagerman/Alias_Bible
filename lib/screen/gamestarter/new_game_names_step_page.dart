@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 
-import '../widgets/button/home_screen_button.dart';
-import '../widgets/new_play_form.dart';
+import '../../widgets/button/home_screen_button.dart';
+import '../../widgets/new_play_form.dart';
 
-class NewPlayScreen extends StatefulWidget {
-  const NewPlayScreen({Key? key}) : super(key: key);
+class NewGameNamesStepPage extends StatefulWidget {
+  const NewGameNamesStepPage({Key? key}) : super(key: key);
 
   @override
-  State<NewPlayScreen> createState() => _NewPlayScreenState();
+  State<NewGameNamesStepPage> createState() => _NewGameNamesStepPageState();
 }
 
-class _NewPlayScreenState extends State<NewPlayScreen> {
+class _NewGameNamesStepPageState extends State<NewGameNamesStepPage> {
   final List<TextEditingController> _controllers = [];
 
   @override
