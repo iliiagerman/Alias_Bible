@@ -83,6 +83,9 @@ class _NewGameNamesStepPageState extends State<NewGameNamesStepPage> {
     //   Navigator.pushNamed(context, '/change_level_screen.dart');
     // }
 
+    ///todo
+    ///получить строку название первой команды и второй если они совпадают то не переходить дальше
+
     _controllers.first.text.isEmpty
         ? 'дайте название командам'
         : Navigator.pushNamed(context, '/change_level_screen.dart');
